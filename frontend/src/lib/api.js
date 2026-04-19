@@ -1,9 +1,16 @@
 import axios from 'axios';
 
-console.log('📡 API Base URL:', import.meta.env.VITE_API_URL || 'http://localhost:5000/api');
+let baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Remove trailing slash if present to prevent double slashes in requests
+if (baseUrl.endsWith('/')) {
+  baseUrl = baseUrl.slice(0, -1);
+}
+
+console.log('📡 API Base URL (Cleaned):', baseUrl);
+console.log('🕒 Build Time:', new Date().toLocaleString());
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: baseUrl,
   headers: {
     'Content-Type': 'application/json',
   },
