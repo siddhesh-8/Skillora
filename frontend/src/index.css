@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark Mode (Default) */
+    --background: #0A0A0F;
+    --foreground: #F8FAFC;
+    --card: #1A1A2E;
+    --card-foreground: #F8FAFC;
+    --popover: #1A1A2E;
+    --popover-foreground: #F8FAFC;
+    --primary: #6C63FF;
+    --primary-foreground: #FFFFFF;
+    --secondary: #2D2D44;
+    --secondary-foreground: #F8FAFC;
+    --muted: #2D2D44;
+    --muted-foreground: #94A3B8;
+    --accent: #2D2D44;
+    --accent-foreground: #F8FAFC;
+    --destructive: #E11D48;
+    --destructive-foreground: #F8FAFC;
+    --border: #2D2D44;
+    --input: #2D2D44;
+    --ring: #6C63FF;
+    --radius: 0.75rem;
+
+    /* Semantic UI Variables Mapping */
+    --surface-main: #0A0A0F;
+    --surface-card: #1A1A2E;
+    --surface-inner: #0F0F1A;
+    --text-main: #FFFFFF;
+    --text-muted: #94A3B8;
+    --border-main: #2D2D44;
+  }
+
+  .light {
+    /* Light Mode */
+    --background: #F8FAFC;
+    --foreground: #0F172A;
+    --card: #FFFFFF;
+    --card-foreground: #0F172A;
+    --popover: #FFFFFF;
+    --popover-foreground: #0F172A;
+    --primary: #6366F1;
+    --primary-foreground: #FFFFFF;
+    --secondary: #F1F5F9;
+    --secondary-foreground: #0F172A;
+    --muted: #F1F5F9;
+    --muted-foreground: #64748B;
+    --accent: #F1F5F9;
+    --accent-foreground: #0F172A;
+    --destructive: #EF4444;
+    --destructive-foreground: #FFFFFF;
+    --border: #E2E8F0;
+    --input: #E2E8F0;
+    --ring: #6366F1;
+
+    /* Semantic UI Variables for Light Mode */
+    --surface-main: var(--background);
+    --surface-card: var(--card);
+    --surface-inner: #f1f5f9;
+    --text-main: var(--foreground);
+    --text-muted: #64748b;
+    --border-main: var(--border);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300 font-sans;
+  }
+}
+
+.transition-theme {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, fill 0.3s ease;
+}
